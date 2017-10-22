@@ -7,7 +7,7 @@ import { GitlabEventType } from './GitlabEventType';
 export class GitlabWebHooksServer implements IWebHooksServer {
   private server: KoaServer;
   private onErrorCallback: (err: Error) => void;
-  private subscribeFn: (eventType: GitlabEventType, data: any) => void;
+  private subscribeFn: (eventType: GitlabEventType, data: any, headers?: any) => void;
 
   constructor(private options?: ServerOptions) {
     this.options = options || {};
@@ -27,7 +27,7 @@ export class GitlabWebHooksServer implements IWebHooksServer {
     }
     const body = context.request.body;
     const eventType = this._getEventType(gitlabEvent, body);
-    this.subscribeFn && this.subscribeFn.call(null, eventType, body);
+    this.subscribeFn && this.subscribeFn.call(null, eventType, body, context.headers);
     context.status = 204;
     context.body = '';
   }
@@ -71,7 +71,7 @@ export class GitlabWebHooksServer implements IWebHooksServer {
    * Subcribe the gitlab webhooks event.
    * @param fn Pass the eventType and data.
    */
-  subscribe(fn: (eventType: GitlabEventType, data: any) => void) {
+  subscribe(fn: (eventType: GitlabEventType, data: any, headers?: any) => void) {
     this.subscribeFn = fn;
   }
 

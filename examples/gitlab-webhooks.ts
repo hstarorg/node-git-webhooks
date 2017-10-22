@@ -17,5 +17,5 @@ server.subscribe((evt: GitlabEventType, data: any) => {
 
 server.listen(1234)
   .then(() => {
-    console.log('监听端口：1234');
+    console.log('Gitlab：监听端口：1234');
   });

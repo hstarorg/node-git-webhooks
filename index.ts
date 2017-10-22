@@ -1,14 +1,20 @@
 import {
   GitlabEventType,
-  GitlabWebHooksServer
+  GitlabWebHooksServer,
+  GithubEventType,
+  GithubWebHooksServer
 } from './lib';
 
 export {
   GitlabEventType,
-  GitlabWebHooksServer
+  GitlabWebHooksServer,
+  GithubEventType,
+  GithubWebHooksServer
 };
 
 export default {
   GitlabEventType,
-  GitlabWebHooksServer
+  GitlabWebHooksServer,
+  GithubEventType,
+  GithubWebHooksServer
 };
