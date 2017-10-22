@@ -48,6 +48,7 @@ gulp.task('watch', done => {
 
 
 gulp.task('default', gulp.series(
+  'clean',
   'tsc',
   gulp.parallel('serve', 'watch'))
 );
