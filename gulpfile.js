@@ -21,7 +21,7 @@ gulp.task('tsc:dist', done => {
 });
 
 gulp.task('serve', done => {
-  developServer.listen({ path: './dist/examples/gitlab-webhooks.js' }, err => {
+  developServer.listen({ path: './dist/examples/index.js' }, err => {
     if (err) { console.error(err); }
     notify(`启动开发示例[${!err ? '成功' : '失败'}]`);
     done();
