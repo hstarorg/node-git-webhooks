@@ -1,5 +1,5 @@
 {
-  "name": "git-webhooks",
+  "name": "node-git-webhooks",
   "version": "0.0.1",
   "description": "The webhooks lib for code repositories based on git.",
   "main": "index.js",
@@ -7,11 +7,12 @@
   "scripts": {
     "dev": "gulp4",
     "build": "gulp4 build",
+    "dist": "cd dist && npm publish --registry http://registry.npmjs.org",
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hstarorg/git-webhooks.git"
+    "url": "git+https://github.com/hstarorg/node-git-webhooks.git"
   },
   "keywords": [
     "git",
@@ -22,9 +23,9 @@
   "author": "Jay.M.Hu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hstarorg/git-webhooks/issues"
+    "url": "https://github.com/hstarorg/node-git-webhooks/issues"
   },
-  "homepage": "https://github.com/hstarorg/git-webhooks#readme",
+  "homepage": "https://github.com/hstarorg/node-git-webhooks#readme",
   "dependencies": {
     "koa": "^2.3.0",
     "koa-body": "^2.5.0"

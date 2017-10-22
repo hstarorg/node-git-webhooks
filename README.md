@@ -1,10 +1,10 @@
-# git-webhooks
+# node-git-webhooks
 The webhooks lib for code repositories based on git.
 
 # Usage
 
 ```js
-const gitWebhooks = require('git-webhooks');
+const gitWebhooks = require('node-git-webhooks');
 
 // Run web hooks server at port 8000;
 gitWebhooks.listen(8000);
