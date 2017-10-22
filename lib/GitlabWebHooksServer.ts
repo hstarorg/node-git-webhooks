@@ -55,6 +55,8 @@ export class GitlabWebHooksServer implements IWebHooksServer {
           return GitlabEventType.MergeRequestNote;
         } else if (body.snippet) {
           return GitlabEventType.SnippetNote;
+        } else if (body.issue) {
+          return GitlabEventType.IssueNote;
         }
       default:
         throw new Error('Get event type error, no matched.');
