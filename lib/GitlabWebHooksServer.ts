@@ -67,12 +67,16 @@ export class GitlabWebHooksServer implements IWebHooksServer {
     this.onErrorCallback = fn;
   }
 
+  /**
+   * Subcribe the gitlab webhooks event.
+   * @param fn Pass the eventType and data.
+   */
   subscribe(fn: (eventType: GitlabEventType, data: any) => void) {
     this.subscribeFn = fn;
   }
 
   /**
-   * 启动Server
+   * Run the webhook notify server.
    * @param {number} port 
    */
   listen(port: number) {
