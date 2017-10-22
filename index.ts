@@ -3,9 +3,12 @@ import {
   GitlabWebHooksServer
 } from './lib';
 
-const exportObject = {
+export {
   GitlabEventType,
   GitlabWebHooksServer
 };
 
-export default exportObject;
+export default {
+  GitlabEventType,
+  GitlabWebHooksServer
+};
