@@ -4,11 +4,28 @@ The webhooks lib for code repositories based on git.
 # Usage
 
 ```js
-const gitWebhooks = require('node-git-webhooks');
+const gitWebhooks = require('node-git-webhooks').default;
+
+const server = new gitWebhooks.GitlabWebHooksServer();
+// All gitlab webhooks type.
+const gitlabEventType = gitWebhooks.GitlabEventType;
+
+server.subscribe((evt, data) => {
+  if (evt === gitlabEventType.Push) {
+    console.log('push', data);
+  } else if (evt === gitlabEventType.IssueNote) {
+    console.log('issue note', data);
+  }
+});
+
+server.onError(err => {
+  console.error('出错了', err);
+});
 
 // Run web hooks server at port 8000;
-gitWebhooks.listen(8000);
-
+server.listen(8000).then(server => {
+  console.log('server started...');
+});
 ```
 
 # How to Develop

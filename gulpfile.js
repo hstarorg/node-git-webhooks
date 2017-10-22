@@ -53,9 +53,11 @@ gulp.task('default', gulp.series(
   gulp.parallel('serve', 'watch'))
 );
 
-gulp.task('copyPackageJson', () => {
-  return gulp.src('./package.json')
+gulp.task('copyFiles', () => {
+  return gulp.src([
+    './*.*'
+  ])
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', gulp.series('clean', 'tsc:dist', 'copyPackageJson'));
+gulp.task('build', gulp.series('clean', 'tsc:dist', 'copyFiles'));
