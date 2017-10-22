@@ -3,6 +3,11 @@ The webhooks lib for code repositories based on git.
 
 # Usage
 
+```bash
+# Local install
+npm i -S node-git-webhooks
+```
+
 ```js
 const gitWebhooks = require('node-git-webhooks').default;
 
@@ -19,7 +24,7 @@ server.subscribe((evt, data) => {
 });
 
 server.onError(err => {
-  console.error('出错了', err);
+  console.error('Error', err);
 });
 
 // Run web hooks server at port 8000;
