@@ -1,10 +1,11 @@
-const http = require('http');
-const Koa = require('koa');
-const koaBody = require('koa-body');
-const router = require('koa-router')();
+import * as http from 'http';
+import * as Koa from 'koa';
+import * as koaBody from 'koa-body';
 
-class WebHooksServer {
-  constructor(options) {
+import { IWebHooksServer } from './IWebHooksServer';
+
+export class GitlabWebHooksServer implements IWebHooksServer {
+  constructor(options?: any) {
 
   }
 
@@ -15,6 +16,9 @@ class WebHooksServer {
   listen(port) {
     const app = new Koa();
     app.use(koaBody());
+    app.use(context => {
+      console.log(context.url, context.request, context.request.body);
+    });
     const server = http.createServer(app.callback());
     return new Promise((resolve, reject) => {
       server.listen(port, err => {
@@ -26,5 +30,3 @@ class WebHooksServer {
     });
   }
 }
-
-module.exports = WebHooksServer;

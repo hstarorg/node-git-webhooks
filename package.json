@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "The webhooks lib for code repositories based on git.",
   "main": "index.js",
+  "types": "types",
   "scripts": {
     "dev": "gulp4",
+    "build": "gulp4 build",
     "test": "test"
   },
   "repository": {
@@ -25,12 +27,14 @@
   "homepage": "https://github.com/hstarorg/git-webhooks#readme",
   "dependencies": {
     "koa": "^2.3.0",
-    "koa-body": "^2.5.0",
-    "koa-router": "^7.2.1"
+    "koa-body": "^2.5.0"
   },
   "devDependencies": {
+    "@types/node": "^8.0.46",
     "gulp-develop-server": "^0.5.2",
     "gulp4": "^4.0.2",
-    "node-notifier": "^5.1.2"
+    "node-notifier": "^5.1.2",
+    "shelljs": "^0.7.8",
+    "typescript": "^2.5.3"
   }
 }
